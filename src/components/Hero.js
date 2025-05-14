@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <section className="pt-6 pb-16 sm:py-24 md:py-36 bg-light-accent relative overflow-hidden">
@@ -43,13 +41,10 @@ export default function Hero() {
           <div className="w-full sm:w-4/5 md:w-1/2 mb-8 sm:mb-12 md:mb-0 md:pr-16 animate-slide-left mx-auto md:mx-0">
             <div className="aspect-[3/4] overflow-hidden relative rounded-lg shadow-xl">
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary rounded-lg z-0"></div>
-              <Image 
+              <img 
                 src="/pshycologist.jpg" 
                 alt="Ambreen Rashid Khan - Clinical Psychologist" 
-                width={600}
-                height={800}
                 className="w-full h-full object-cover object-top relative z-10 rounded-lg transform transition-transform duration-500 hover:scale-105"
-                priority
               />
               <div className="absolute top-0 left-0 w-full h-full bg-primary opacity-10 rounded-lg z-20"></div>
               

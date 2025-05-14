@@ -348,11 +348,34 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif, 'DM Serif Display', serif);
   font-size: 1.5rem;
   color: var(--primary);
-  transition: transform 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  letter-spacing: 0.02em;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .logo-emblem:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  letter-spacing: 0.04em;
+}
+
+.logo-emblem::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary);
+  opacity: 0.5;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.logo-emblem:hover::before {
+  transform: scaleX(1);
 }
 
 .circular-image {
@@ -715,67 +738,4 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.8;
     transition: opacity 0.1s ease;
   }
-}
-
-/* Elegant logo styling */
-.logo-emblem-elegant {
-  font-family: var(--font-serif, 'DM Serif Display', Georgia, serif);
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  position: relative;
-  display: inline-block;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
-}
-
-.logo-emblem-elegant span:first-letter {
-  font-size: 1.3em;
-  font-weight: 500;
-}
-
-.logo-emblem-elegant span.font-serif {
-  opacity: 0.95;
-}
-
-.logo-emblem-elegant::after {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--primary);
-  transition: width 0.5s ease;
-  opacity: 0.4;
-}
-
-.logo-emblem-elegant:hover::after {
-  width: 100%;
-}
-
-.logo-emblem-elegant:hover span:first-child {
-  color: var(--primary-dark);
-}
-
-/* Add to existing animations */
-@keyframes letterFloat {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
-  100% { transform: translateY(0); }
-}
-
-.logo-emblem-elegant:hover span.font-serif {
-  display: inline-block;
-  animation: letterFloat 2s ease infinite;
-}
-
-.logo-emblem-elegant:hover span.font-serif:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.logo-emblem-elegant:hover span.font-serif:nth-child(4) {
-  animation-delay: 0.2s;
-}
-
-.logo-emblem-elegant:hover span.font-serif:nth-child(6) {
-  animation-delay: 0.3s;
 }
