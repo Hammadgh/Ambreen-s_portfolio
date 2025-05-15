@@ -128,7 +128,7 @@ export default function Footer() {
               </li>
               <li className="mt-6">
                 <a href="#contact" className="inline-block bg-white text-primary hover:bg-white/90 transition-colors py-2 px-4 rounded text-sm font-medium">
-                  Book a Session
+                  Contact Me
                 </a>
               </li>
             </ul>

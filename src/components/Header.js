@@ -79,20 +79,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="top-booking-bar bg-primary shadow-sm animate-fade-in">
-        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
-          <span className="font-light text-cream-white mb-2 sm:mb-0">Ready to begin your journey?</span>
-          <a href="#contact" className="text-cream-white hover:text-white transition-colors duration-300 font-medium flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-dark hover:bg-opacity-90 transform hover:translate-x-1 w-auto">
-            Book a session today 
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14"></path>
-              <path d="M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-      
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-cream-white shadow-lg' : 'py-4 sm:py-5 bg-cream-white bg-opacity-95 backdrop-blur-sm shadow-md'}`}>
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-cream-white shadow-lg' : 'py-4 sm:py-5 bg-cream-white shadow-md'}`} style={{ backgroundColor: '#FAF8F5' }}>
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex flex-col">
             <div className="logo-container relative flex items-center">
@@ -181,7 +168,7 @@ export default function Header() {
                 <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 transition-transform duration-300 ${activeLink === "contact" ? "scale-x-100" : ""}`}></span>
               </a>
             </div>
-            <a href="#contact" className="btn-primary py-2.5 px-6 rounded-md shadow-md hover:shadow-xl font-medium text-xs tracking-wider border border-transparent hover:border-white/20 transition-all duration-300">BOOK NOW</a>
+            <a href="#contact" className="btn-primary py-2.5 px-6 rounded-md shadow-md hover:shadow-xl font-medium text-xs tracking-wider border border-transparent hover:border-white/20 transition-all duration-300">CONTACT ME</a>
           </nav>
         </div>
         
@@ -204,7 +191,7 @@ export default function Header() {
               Contact
             </a>
             <a href="#contact" className="block py-3 px-5 mt-4 bg-primary text-white rounded-md text-center hover:bg-primary-dark transition-colors shadow-md font-medium flex items-center justify-center" onClick={() => handleNavClick("contact")}>
-              Book a Session
+              Contact Me
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
                 <path d="M5 12h14"></path>
                 <path d="M12 5l7 7-7 7"></path>

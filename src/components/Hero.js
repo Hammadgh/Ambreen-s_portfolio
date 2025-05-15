@@ -1,9 +1,9 @@
 export default function Hero() {
   return (
-    <section className="pt-6 pb-16 sm:py-24 md:py-36 bg-light-accent relative overflow-hidden">
+    <section className="pt-6 pb-16 sm:py-24 md:py-36 bg-[#00D8D8]/20 relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-48 sm:w-64 h-48 sm:h-64 bg-accent rounded-full opacity-30 transform -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-64 sm:w-80 h-64 sm:h-80 bg-accent rounded-full opacity-30 transform translate-x-1/3 translate-y-1/3"></div>
+      <div className="absolute top-0 left-0 w-48 sm:w-64 h-48 sm:h-64 bg-[#03C0C1]/30 rounded-full opacity-70 transform -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-64 sm:w-80 h-64 sm:h-80 bg-[#03C0C1]/30 rounded-full opacity-70 transform translate-x-1/3 translate-y-1/3"></div>
       
       <div className="container relative z-10">
         {/* Mobile-first hero highlights that appear above image on mobile */}
@@ -99,7 +99,7 @@ export default function Hero() {
               
               {/* Mobile floating CTA button */}
               <div className="fixed bottom-6 right-6 z-50 md:hidden animate-fade-in delay-400">
-                <a href="#contact" className="bg-primary text-white shadow-lg rounded-full w-14 h-14 flex items-center justify-center">
+                <a href="#contact" className="bg-[#009C9D] text-white shadow-lg rounded-full w-14 h-14 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
