@@ -1,4 +1,24 @@
+"use client";
+
+import { useCallback } from 'react';
+
 export default function Hero() {
+  // Smooth scroll function
+  const scrollToSection = useCallback((sectionId, event) => {
+    if (event) event.preventDefault();
+    
+    const targetSection = document.getElementById(sectionId);
+    if (!targetSection) return;
+    
+    const offset = 80; // Adjust this value based on header height
+    const targetPosition = targetSection.offsetTop - offset;
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  }, []);
+  
   return (
     <section className="pt-6 pb-16 sm:py-24 md:py-36 bg-[#00D8D8]/20 relative overflow-hidden">
       {/* Decorative elements */}
@@ -75,13 +95,13 @@ export default function Hero() {
               
               {/* Mobile quick navigation */}
               <div className="grid grid-cols-2 gap-3 mb-6 md:hidden">
-                <a href="#about" className="bg-white/70 text-primary font-medium text-center py-2.5 rounded-md text-sm animate-fade-in-scale delay-100 shadow-sm mobile-tap-highlight flex items-center justify-center">
+                <a href="#about" onClick={(e) => scrollToSection('about', e)} className="bg-white/70 text-primary font-medium text-center py-2.5 rounded-md text-sm animate-fade-in-scale delay-100 shadow-sm mobile-tap-highlight flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   About Me
                 </a>
-                <a href="#services" className="bg-white/70 text-primary font-medium text-center py-2.5 rounded-md text-sm animate-fade-in-scale delay-200 shadow-sm mobile-tap-highlight flex items-center justify-center">
+                <a href="#services" onClick={(e) => scrollToSection('services', e)} className="bg-white/70 text-primary font-medium text-center py-2.5 rounded-md text-sm animate-fade-in-scale delay-200 shadow-sm mobile-tap-highlight flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
@@ -89,7 +109,7 @@ export default function Hero() {
                 </a>
               </div>
               
-              <a href="#contact" className="btn-primary group flex items-center justify-center sm:justify-start w-full sm:w-auto mobile-tap-highlight">
+              <a href="#contact" onClick={(e) => scrollToSection('contact', e)} className="btn-primary group flex items-center justify-center sm:justify-start w-full sm:w-auto mobile-tap-highlight">
                 Schedule an Appointment
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">
                   <path d="M5 12h14"></path>
@@ -97,9 +117,9 @@ export default function Hero() {
                 </svg>
               </a>
               
-              {/* Mobile floating CTA button */}
-              <div className="fixed bottom-6 right-6 z-50 md:hidden animate-fade-in delay-400">
-                <a href="#contact" className="bg-[#009C9D] text-white shadow-lg rounded-full w-14 h-14 flex items-center justify-center">
+              {/* Mobile floating CTA button - moved to middle position */}
+              <div className="fixed bottom-6 right-6 z-50 md:hidden animate-fade-in delay-400 hidden">
+                <a href="#contact" onClick={(e) => scrollToSection('contact', e)} className="bg-[#009C9D] text-white shadow-lg rounded-full w-14 h-14 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>

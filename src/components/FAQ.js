@@ -37,7 +37,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="section bg-background py-20">
+    <section id="faq" className="section bg-[#00D8D8]/10 py-20">
       <div className="container mx-auto px-4">
         <h2 className="section-title text-center mb-16 animate-fade-in">Frequently Asked Questions</h2>
         
@@ -45,17 +45,17 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div 
               key={index} 
-              className={`mb-6 border-b border-border-light pb-4 animate-slide-up delay-${index * 100} transition-all duration-300 ${openFAQ === index ? 'pb-6' : ''}`}
+              className={`mb-6 border-b border-[#03C0C1]/30 pb-4 animate-slide-up delay-${index * 100} transition-all duration-300 ${openFAQ === index ? 'pb-6' : ''}`}
             >
               <button 
                 className="w-full flex justify-between items-center text-left focus:outline-none group"
                 onClick={() => toggleFAQ(index)}
                 aria-expanded={openFAQ === index}
               >
-                <h3 className="text-xl font-serif font-medium text-foreground pr-8 leading-normal">
+                <h3 className="text-xl font-serif font-medium text-foreground pr-8 leading-normal group-hover:text-[#009C9D] transition-colors">
                   {faq.question}
                 </h3>
-                <span className={`transform transition-transform duration-300 text-primary ${openFAQ === index ? 'rotate-180' : ''}`}>
+                <span className={`transform transition-transform duration-300 text-[#009C9D] ${openFAQ === index ? 'rotate-180' : ''}`}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -64,7 +64,7 @@ export default function FAQ() {
               <div 
                 className={`mt-2 overflow-hidden transition-all duration-300 ${openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
               >
-                <p className="text-text-light">{faq.answer}</p>
+                <p className="text-text-light pl-0 md:pl-2 border-l-0 md:border-l-2 border-[#03C0C1]/20 md:ml-1 md:py-1">{faq.answer}</p>
               </div>
             </div>
           ))}

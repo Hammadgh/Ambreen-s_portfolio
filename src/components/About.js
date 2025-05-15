@@ -1,6 +1,24 @@
-import React from 'react';
+"use client";
+
+import { useCallback } from 'react';
 
 export default function About() {
+  // Smooth scroll function
+  const scrollToSection = useCallback((sectionId, event) => {
+    if (event) event.preventDefault();
+    
+    const targetSection = document.getElementById(sectionId);
+    if (!targetSection) return;
+    
+    const offset = 80; // Adjust this value based on header height
+    const targetPosition = targetSection.offsetTop - offset;
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  }, []);
+  
   return (
     <section id="about" className="section bg-cream-white py-10">
       <div className="container max-w-5xl mx-auto">
@@ -73,7 +91,7 @@ export default function About() {
                 </div>
                 
                 <div className="mt-3">
-                  <a href="#approach" className="btn-primary text-sm">Learn About My Approach</a>
+                  <a href="#approach" onClick={(e) => scrollToSection('approach', e)} className="btn-primary text-sm">Learn About My Approach</a>
                 </div>
               </div>
             </div>

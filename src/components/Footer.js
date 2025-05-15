@@ -1,5 +1,25 @@
+"use client";
+
+import { useCallback } from 'react';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  
+  // Smooth scroll function
+  const scrollToSection = useCallback((sectionId, event) => {
+    if (event) event.preventDefault();
+    
+    const targetSection = document.getElementById(sectionId);
+    if (!targetSection) return;
+    
+    const offset = 80; // Adjust this value based on header height
+    const targetPosition = targetSection.offsetTop - offset;
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  }, []);
   
   return (
     <footer className="bg-primary text-white pt-20 pb-10">
@@ -42,31 +62,31 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#about" className="text-white/80 hover:text-white transition-colors text-sm flex items-center group">
+                <a href="#about" onClick={(e) => scrollToSection('about', e)} className="text-white/80 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="mr-2 transform translate-x-0 group-hover:translate-x-1 transition-transform">→</span> 
                   About
                 </a>
               </li>
               <li>
-                <a href="#approach" className="text-white/80 hover:text-white transition-colors text-sm flex items-center group">
+                <a href="#approach" onClick={(e) => scrollToSection('approach', e)} className="text-white/80 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="mr-2 transform translate-x-0 group-hover:translate-x-1 transition-transform">→</span> 
                   Approach
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-white/80 hover:text-white transition-colors text-sm flex items-center group">
+                <a href="#services" onClick={(e) => scrollToSection('services', e)} className="text-white/80 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="mr-2 transform translate-x-0 group-hover:translate-x-1 transition-transform">→</span> 
                   Services
                 </a>
               </li>
               <li>
-                <a href="#faq" className="text-white/80 hover:text-white transition-colors text-sm flex items-center group">
+                <a href="#faq" onClick={(e) => scrollToSection('faq', e)} className="text-white/80 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="mr-2 transform translate-x-0 group-hover:translate-x-1 transition-transform">→</span> 
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-white/80 hover:text-white transition-colors text-sm flex items-center group">
+                <a href="#contact" onClick={(e) => scrollToSection('contact', e)} className="text-white/80 hover:text-white transition-colors text-sm flex items-center group">
                   <span className="mr-2 transform translate-x-0 group-hover:translate-x-1 transition-transform">→</span> 
                   Contact
                 </a>
@@ -90,14 +110,14 @@ export default function Footer() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white/60 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-white/80 text-sm">+44 123 456 7890</span>
+                <span className="text-white/80 text-sm">+92 323 8513549</span>
               </li>
               <li className="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white/60 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-white/80 text-sm">London, United Kingdom</span>
+                <span className="text-white/80 text-sm">Shadman 2 Lahore,</span>
               </li>
             </ul>
           </div>
@@ -127,7 +147,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="mt-6">
-                <a href="#contact" className="inline-block bg-white text-primary hover:bg-white/90 transition-colors py-2 px-4 rounded text-sm font-medium">
+                <a href="#contact" onClick={(e) => scrollToSection('contact', e)} className="inline-block bg-white text-primary hover:bg-white/90 transition-colors py-2 px-4 rounded text-sm font-medium">
                   Contact Me
                 </a>
               </li>

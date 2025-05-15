@@ -7,6 +7,22 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("about");
 
+  // Smooth scroll function
+  const scrollToSection = (sectionId, event) => {
+    if (event) event.preventDefault();
+    
+    const targetSection = document.getElementById(sectionId);
+    if (!targetSection) return;
+    
+    const offset = 80; // Adjust this value based on header height
+    const targetPosition = targetSection.offsetTop - offset;
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  };
+
   useEffect(() => {
     // Handle scroll events for header styling only
     const handleScroll = () => {
@@ -75,22 +91,7 @@ export default function Header() {
   const handleNavClick = (sectionId, event) => {
     setActiveLink(sectionId);
     setIsMobileMenuOpen(false);
-    
-    // Add smooth scrolling behavior
-    const element = document.getElementById(sectionId);
-    if (element && event) {
-      // Prevent default anchor behavior
-      event.preventDefault();
-      
-      // Smooth scroll to the element
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-      
-      // Update URL without causing page jump
-      window.history.pushState(null, null, `#${sectionId}`);
-    }
+    scrollToSection(sectionId, event);
   };
 
   return (
@@ -145,7 +146,7 @@ export default function Header() {
             <div className="mr-6 flex space-x-8">
               <a 
                 href="#about" 
-                onClick={(event) => handleNavClick("about", event)}
+                onClick={(e) => handleNavClick("about", e)}
                 className={`nav-link font-medium relative px-1 py-2 text-sm ${activeLink === "about" ? "text-primary" : "text-foreground hover:text-primary"} transition-colors duration-300`}
               >
                 About
@@ -153,7 +154,7 @@ export default function Header() {
               </a>
               <a 
                 href="#approach" 
-                onClick={(event) => handleNavClick("approach", event)}
+                onClick={(e) => handleNavClick("approach", e)}
                 className={`nav-link font-medium relative px-1 py-2 text-sm ${activeLink === "approach" ? "text-primary" : "text-foreground hover:text-primary"} transition-colors duration-300`}
               >
                 Approach
@@ -161,7 +162,7 @@ export default function Header() {
               </a>
               <a 
                 href="#services" 
-                onClick={(event) => handleNavClick("services", event)}
+                onClick={(e) => handleNavClick("services", e)}
                 className={`nav-link font-medium relative px-1 py-2 text-sm ${activeLink === "services" ? "text-primary" : "text-foreground hover:text-primary"} transition-colors duration-300`}
               >
                 Services
@@ -169,7 +170,7 @@ export default function Header() {
               </a>
               <a 
                 href="#faq" 
-                onClick={(event) => handleNavClick("faq", event)}
+                onClick={(e) => handleNavClick("faq", e)}
                 className={`nav-link font-medium relative px-1 py-2 text-sm ${activeLink === "faq" ? "text-primary" : "text-foreground hover:text-primary"} transition-colors duration-300`}
               >
                 FAQ
@@ -177,36 +178,36 @@ export default function Header() {
               </a>
               <a 
                 href="#contact" 
-                onClick={(event) => handleNavClick("contact", event)}
+                onClick={(e) => handleNavClick("contact", e)}
                 className={`nav-link font-medium relative px-1 py-2 text-sm ${activeLink === "contact" ? "text-primary" : "text-foreground hover:text-primary"} transition-colors duration-300`}
               >
                 Contact
                 <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 transition-transform duration-300 ${activeLink === "contact" ? "scale-x-100" : ""}`}></span>
               </a>
             </div>
-            <a href="#contact" className="btn-primary py-2.5 px-6 rounded-md shadow-md hover:shadow-xl font-medium text-xs tracking-wider border border-transparent hover:border-white/20 transition-all duration-300">CONTACT ME</a>
+            <a href="#contact" onClick={(e) => handleNavClick("contact", e)} className="btn-primary py-2.5 px-6 rounded-md shadow-md hover:shadow-xl font-medium text-xs tracking-wider border border-transparent hover:border-white/20 transition-all duration-300">CONTACT ME</a>
           </nav>
         </div>
         
         {/* Mobile menu dropdown */}
         <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-          <div className="px-4 pt-3 pb-5 bg-cream-white shadow-md space-y-2 animate-slide-up rounded-b-lg">
-            <a href="#about" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "about" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(event) => handleNavClick("about", event)}>
+          <div className="px-4 pt-3 pb-5 bg-white shadow-md space-y-2 animate-slide-up rounded-b-lg">
+            <a href="#about" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "about" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(e) => handleNavClick("about", e)}>
               About
             </a>
-            <a href="#approach" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "approach" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(event) => handleNavClick("approach", event)}>
+            <a href="#approach" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "approach" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(e) => handleNavClick("approach", e)}>
               Approach
             </a>
-            <a href="#services" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "services" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(event) => handleNavClick("services", event)}>
+            <a href="#services" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "services" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(e) => handleNavClick("services", e)}>
               Services
             </a>
-            <a href="#faq" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "faq" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(event) => handleNavClick("faq", event)}>
+            <a href="#faq" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "faq" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(e) => handleNavClick("faq", e)}>
               FAQ
             </a>
-            <a href="#contact" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "contact" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(event) => handleNavClick("contact", event)}>
+            <a href="#contact" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "contact" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(e) => handleNavClick("contact", e)}>
               Contact
             </a>
-            <a href="#contact" className="block py-3 px-5 mt-4 bg-primary text-white rounded-md text-center hover:bg-primary-dark transition-colors shadow-md font-medium flex items-center justify-center" onClick={(event) => handleNavClick("contact", event)}>
+            <a href="#contact" className="block py-3 px-5 mt-4 bg-primary text-white rounded-md text-center hover:bg-primary-dark transition-colors shadow-md font-medium flex items-center justify-center" onClick={(e) => handleNavClick("contact", e)}>
               Contact Me
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
                 <path d="M5 12h14"></path>
