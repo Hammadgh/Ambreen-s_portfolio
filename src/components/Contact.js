@@ -77,7 +77,7 @@ export default function Contact() {
         <h2 className="section-title animate-fade-in">Get in Touch</h2>
         
         <div className="text-center max-w-3xl mx-auto mb-10 animate-fade-in">
-          <p className="text-text-light">I'm here to listen and support you on your journey to better mental health. Feel free to reach out with any questions you have about my services or to schedule a consultation.</p>
+          <p className="text-text-light">I&apos;m here to listen and support you on your journey to better mental health. Feel free to reach out with any questions you have about my services or to schedule a consultation.</p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white rounded-lg shadow-md overflow-hidden">

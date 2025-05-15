@@ -83,7 +83,7 @@ export default function Approach() {
         <div className="text-center mt-8">
           <div className="inline-block bg-white px-6 py-3 rounded-lg shadow-sm border border-[#03C0C1]/20">
             <p className="text-sm text-gray-700">
-              <span className="text-[#009C9D] font-medium">My approach is flexible</span> - we'll use the techniques that work best for <span className="italic">your</span> unique situation
+              <span className="text-[#009C9D] font-medium">My approach is flexible</span> - we&apos;ll use the techniques that work best for <span className="italic">your</span> unique situation
             </p>
           </div>
         </div>
