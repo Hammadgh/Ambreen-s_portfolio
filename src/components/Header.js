@@ -72,14 +72,30 @@ export default function Header() {
   }, []);
 
   // Function to handle clicking on navigation links
-  const handleNavClick = (sectionId) => {
+  const handleNavClick = (sectionId, event) => {
     setActiveLink(sectionId);
     setIsMobileMenuOpen(false);
+    
+    // Add smooth scrolling behavior
+    const element = document.getElementById(sectionId);
+    if (element && event) {
+      // Prevent default anchor behavior
+      event.preventDefault();
+      
+      // Smooth scroll to the element
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Update URL without causing page jump
+      window.history.pushState(null, null, `#${sectionId}`);
+    }
   };
 
   return (
     <>
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-cream-white shadow-lg' : 'py-4 sm:py-5 bg-cream-white shadow-md'}`} style={{ backgroundColor: '#FAF8F5' }}>
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-cream-white shadow-lg' : 'py-4 sm:py-5 bg-white shadow-md'}`} style={{ backgroundColor: 'white' }}>
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex flex-col">
             <div className="logo-container relative flex items-center">
@@ -129,7 +145,7 @@ export default function Header() {
             <div className="mr-6 flex space-x-8">
               <a 
                 href="#about" 
-                onClick={() => handleNavClick("about")}
+                onClick={(event) => handleNavClick("about", event)}
                 className={`nav-link font-medium relative px-1 py-2 text-sm ${activeLink === "about" ? "text-primary" : "text-foreground hover:text-primary"} transition-colors duration-300`}
               >
                 About
@@ -137,7 +153,7 @@ export default function Header() {
               </a>
               <a 
                 href="#approach" 
-                onClick={() => handleNavClick("approach")}
+                onClick={(event) => handleNavClick("approach", event)}
                 className={`nav-link font-medium relative px-1 py-2 text-sm ${activeLink === "approach" ? "text-primary" : "text-foreground hover:text-primary"} transition-colors duration-300`}
               >
                 Approach
@@ -145,7 +161,7 @@ export default function Header() {
               </a>
               <a 
                 href="#services" 
-                onClick={() => handleNavClick("services")}
+                onClick={(event) => handleNavClick("services", event)}
                 className={`nav-link font-medium relative px-1 py-2 text-sm ${activeLink === "services" ? "text-primary" : "text-foreground hover:text-primary"} transition-colors duration-300`}
               >
                 Services
@@ -153,7 +169,7 @@ export default function Header() {
               </a>
               <a 
                 href="#faq" 
-                onClick={() => handleNavClick("faq")}
+                onClick={(event) => handleNavClick("faq", event)}
                 className={`nav-link font-medium relative px-1 py-2 text-sm ${activeLink === "faq" ? "text-primary" : "text-foreground hover:text-primary"} transition-colors duration-300`}
               >
                 FAQ
@@ -161,7 +177,7 @@ export default function Header() {
               </a>
               <a 
                 href="#contact" 
-                onClick={() => handleNavClick("contact")}
+                onClick={(event) => handleNavClick("contact", event)}
                 className={`nav-link font-medium relative px-1 py-2 text-sm ${activeLink === "contact" ? "text-primary" : "text-foreground hover:text-primary"} transition-colors duration-300`}
               >
                 Contact
@@ -175,22 +191,22 @@ export default function Header() {
         {/* Mobile menu dropdown */}
         <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
           <div className="px-4 pt-3 pb-5 bg-cream-white shadow-md space-y-2 animate-slide-up rounded-b-lg">
-            <a href="#about" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "about" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={() => handleNavClick("about")}>
+            <a href="#about" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "about" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(event) => handleNavClick("about", event)}>
               About
             </a>
-            <a href="#approach" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "approach" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={() => handleNavClick("approach")}>
+            <a href="#approach" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "approach" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(event) => handleNavClick("approach", event)}>
               Approach
             </a>
-            <a href="#services" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "services" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={() => handleNavClick("services")}>
+            <a href="#services" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "services" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(event) => handleNavClick("services", event)}>
               Services
             </a>
-            <a href="#faq" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "faq" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={() => handleNavClick("faq")}>
+            <a href="#faq" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "faq" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(event) => handleNavClick("faq", event)}>
               FAQ
             </a>
-            <a href="#contact" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "contact" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={() => handleNavClick("contact")}>
+            <a href="#contact" className={`block py-2.5 px-4 rounded-md transition-colors ${activeLink === "contact" ? "bg-accent text-primary font-medium" : "hover:bg-accent"}`} onClick={(event) => handleNavClick("contact", event)}>
               Contact
             </a>
-            <a href="#contact" className="block py-3 px-5 mt-4 bg-primary text-white rounded-md text-center hover:bg-primary-dark transition-colors shadow-md font-medium flex items-center justify-center" onClick={() => handleNavClick("contact")}>
+            <a href="#contact" className="block py-3 px-5 mt-4 bg-primary text-white rounded-md text-center hover:bg-primary-dark transition-colors shadow-md font-medium flex items-center justify-center" onClick={(event) => handleNavClick("contact", event)}>
               Contact Me
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
                 <path d="M5 12h14"></path>

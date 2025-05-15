@@ -1,16 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f2f0eb;
+  --background: #ffffff;
   --foreground: #333333;
   --primary: #009C9D;
   --primary-dark: #007F80;
   --accent: #03C0C1;
   --light-accent: #00D8D8;
   --text-light: #777777;
-  --border-light: #e8e4dc;
+  --border-light: #ffffff;
   --header-dark: #333333;
   --cream-white: #fefcf9;
+  --scroll-padding: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-padding);
 }
 
 @theme inline {
@@ -70,6 +76,17 @@
   to { transform: scale(1); opacity: 1; }
 }
 
+@keyframes scrollReveal {
+  from { 
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Animation classes */
 .animate-fade-in {
   animation: fadeIn 0.8s ease forwards;
@@ -101,6 +118,17 @@
 
 .animate-fade-in-scale {
   animation: fadeInScale 0.6s ease forwards;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .delay-100 {
