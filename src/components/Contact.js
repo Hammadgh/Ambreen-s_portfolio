@@ -106,7 +106,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium text-white/90 text-sm">Phone</p>
-                  <p className="text-white">+44 123 456 7890</p>
+                  <p className="text-white">+92 323 8513549</p>
                 </div>
               </div>
               
@@ -119,7 +119,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium text-white/90 text-sm">Location</p>
-                  <p className="text-white">London, United Kingdom</p>
+                  <p className="text-white">Shadman 2, Lahore, Pakistan</p>
                 </div>
               </div>
               

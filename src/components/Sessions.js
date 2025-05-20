@@ -6,8 +6,8 @@ export default function Sessions() {
       <div className="container">
         <h2 className="section-title animate-fade-in">Services & Sessions</h2>
         <p className="text-block mb-12 animate-slide-up">
-          I offer a range of therapeutic services tailored to meet your individual needs. Whether you&apos;re seeking help with anxiety, 
-          depression, relationship challenges, or personal growth, together we&apos;ll find the right approach for you.
+          Finding the right service modality for your needs is important. Here is a brief description of the 
+          different service formats I can provide.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
@@ -20,7 +20,7 @@ export default function Sessions() {
               </div>
               <h3 className="text-xl font-serif mb-4 highlight-text">Individual Therapy</h3>
               <p className="text-text-light mb-6">
-                One-on-one sessions focused on your specific concerns and goals. We&apos;ll work together to develop insights and strategies for positive change.
+                You are the primary client. Your personal preferences, needs, concerns, goals, hopes, and dreams are our focus.
               </p>
               <ul className="mb-6 space-y-2">
                 <li className="flex items-center">
@@ -57,7 +57,7 @@ export default function Sessions() {
               </div>
               <h3 className="text-xl font-serif mb-4 highlight-text">Couples Therapy</h3>
               <p className="text-text-light mb-6">
-                Strengthen your relationship by improving communication, resolving conflicts, and deepening understanding between you and your partner.
+                The relationship is the primary client. How each individual&apos;s personal preferences, needs, concerns, goals, hopes, and dreams affect the relationship is our focus.
               </p>
               <ul className="mb-6 space-y-2">
                 <li className="flex items-center">
@@ -89,36 +89,54 @@ export default function Sessions() {
             <div className="service-card hover-card">
               <div className="text-[#009C9D] mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 animate-float" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-serif mb-4 highlight-text">Assessment & Consultation</h3>
+              <h3 className="text-xl font-serif mb-4 highlight-text">Group Therapy</h3>
               <p className="text-text-light mb-6">
-                Comprehensive psychological assessments to help understand your challenges better and determine the most effective path forward.
+                The group supports each other in seeking overall life satisfaction. Guidelines are in place that I, as the group facilitator, reinforce. These guidelines create safety as each individual will need to be vulnerable with their peers in order to fully benefit from the group dynamic. The more open each person is the more every person grows.
               </p>
               <ul className="mb-6 space-y-2">
                 <li className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Initial 90-minute assessment
+                  Shared learning experience
                 </li>
                 <li className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Detailed feedback
+                  Supportive community
                 </li>
                 <li className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Treatment recommendations
+                  Growth through connection
                 </li>
               </ul>
               <div className="mt-auto">
                 <a href="#contact" className="btn-primary">Contact Me</a>
               </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-16 bg-white p-6 rounded-lg shadow-md animate-fade-in delay-300">
+          <h3 className="text-xl font-medium text-primary mb-4">Clinical Supervision & Pricing</h3>
+          <div className="space-y-4">
+            <p className="text-sm">
+              Clinical Supervision is available at 5k per session and every session would be between 35 to 40 minutes for supplementary supervision.
+            </p>
+            <p className="text-sm">
+              Because I work for myself and for your well being, I can adjust session rates based on need, as appropriate.
+            </p>
+            <div className="mt-4 p-4 bg-primary/5 rounded-lg">
+              <p className="text-sm italic text-gray-700">
+                The process begins with an initial session to get to know each other. Together, we&apos;ll assess the appropriate frequency 
+                of meetings for your specific needs and concerns.
+              </p>
             </div>
           </div>
         </div>

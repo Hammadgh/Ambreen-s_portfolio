@@ -30,64 +30,31 @@ export default function About() {
             <div className="bg-white p-4 rounded-lg shadow-sm h-full">
               <div className="text-base space-y-3">
                 <p className="animate-fade-in delay-100">
-                  I&apos;m Ambreen Rashid Khan, a clinical psychologist dedicated to providing compassionate, 
-                  evidence-based therapy that honors your unique experiences and challenges.
+                  I, Ambreen Rashid Khan, work with adults, in individual, couples, and group formats, on a wide array of concerns. 
+                  Addiction or substance abuse, trauma, depression, relationship problems, anxiety, women&apos;s issues, 
+                  Post Traumatic Stress Disorder and grief are examples of the areas I have experience treating.
                 </p>
                 
                 <p className="animate-fade-in delay-200">
-                  My approach is warm, collaborative, and rooted in understanding each person as a whole—their 
-                  strengths, values, and the context of their lives. I believe that therapy is not just about 
-                  addressing problems but about fostering growth, resilience, and meaningful change.
+                  My clinical approach hinges on a trauma informed model with motivational interviewing techniques. 
+                  This allows me to utilize a tailored approach for each person with whom I work. 
+                  I cannot help but use humor regularly and hope this helps create a comfortable environment 
+                  to encounter some hard truths in our sessions.
                 </p>
                 
-                <div className="mt-3 p-3 bg-gradient-to-r from-primary/5 to-accent/10 rounded-lg hover-card animate-fade-in delay-300">
-                  <h3 className="text-lg mb-2 highlight-text font-medium">Specialized Areas</h3>
-                  <div className="grid grid-cols-2 gap-1">
-                    <div>
-                      <ul className="space-y-1 text-sm">
-                        <li className="flex items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          Anxiety & Depression
-                        </li>
-                        <li className="flex items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          Relationship Issues
-                        </li>
-                        <li className="flex items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          Trauma & PTSD
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <ul className="space-y-1 text-sm">
-                        <li className="flex items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          Life Transitions
-                        </li>
-                        <li className="flex items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          Cultural Identity
-                        </li>
-                        <li className="flex items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          Self-Esteem
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                <div className="mt-5 p-3 bg-gradient-to-r from-primary/5 to-accent/10 rounded-lg hover-card animate-fade-in delay-300">
+                  <h3 className="text-lg mb-2 highlight-text font-medium">Your Journey</h3>
+                  <p className="text-sm mb-3">
+                    Every individual has unique needs and circumstances. Each person&apos;s background, family system, 
+                    belief system, personality, and goals differ. And so must their path. Being intentional about 
+                    what path you take means accounting for your unique make up, mending your emotional life, 
+                    and striving for your better life.
+                  </p>
+                  <p className="text-sm">
+                    People tend toward the path of least resistance, and that means the status quo. 
+                    Change is hard, particularly when one has been living the same way for some time. 
+                    This is how counseling helps.
+                  </p>
                 </div>
                 
                 <div className="mt-3">
@@ -116,8 +83,8 @@ export default function About() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <span className="font-medium block text-sm">DClinPsy, Clinical Psychology</span>
-                    <span className="text-xs text-gray-600">University of Oxford</span>
+                    <span className="font-medium block text-sm">Masters of Science in Clinical Psychology</span>
+                    <span className="text-xs text-gray-600">Bahria University, Islamabad, Pakistan</span>
                   </div>
                 </div>
                 <div className="flex items-start p-2 rounded-md bg-white/60 backdrop-blur-sm shadow-sm transition-all hover:shadow-md hover:bg-white/80">
@@ -125,8 +92,8 @@ export default function About() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <span className="font-medium block text-sm">MSc in Cognitive Behavioral Therapy</span>
-                    <span className="text-xs text-gray-600">Kings College London</span>
+                    <span className="font-medium block text-sm">Post Magisterial Diploma</span>
+                    <span className="text-xs text-gray-600">Institute Of Clinical Psychology, University Of Karachi, Pakistan</span>
                   </div>
                 </div>
                 <div className="flex items-start p-2 rounded-md bg-white/60 backdrop-blur-sm shadow-sm transition-all hover:shadow-md hover:bg-white/80">
@@ -134,8 +101,8 @@ export default function About() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <span className="font-medium block text-sm">Member, British Psychological Society</span>
-                    <span className="text-xs text-gray-600">Chartered Psychologist Status</span>
+                    <span className="font-medium block text-sm">Master of Science</span>
+                    <span className="text-xs text-gray-600">Quaid-i-Azam University, Islamabad, Pakistan</span>
                   </div>
                 </div>
                 <div className="flex items-start p-2 rounded-md bg-white/60 backdrop-blur-sm shadow-sm transition-all hover:shadow-md hover:bg-white/80">
@@ -144,7 +111,7 @@ export default function About() {
                   </svg>
                   <div>
                     <span className="font-medium block text-sm">15+ years of clinical experience</span>
-                    <span className="text-xs text-gray-600">Private practice & NHS settings</span>
+                    <span className="text-xs text-gray-600">Work experience at prestigious organizations at national level</span>
                   </div>
                 </div>
               </div>
