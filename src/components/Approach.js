@@ -138,7 +138,7 @@ export default function Approach() {
           {/* Quote */}
           <div className="mt-8 bg-white p-6 rounded-lg shadow-md border-l-4 border-primary">
             <p className="text-sm italic text-gray-700">
-              "My aim is to put myself out of business. I want you not to need me anymore! Have an idea of how you would like to approach your treatment when you meet with me. How often would you like to meet? What are your major concerns?"
+              &ldquo;My aim is to put myself out of business. I want you not to need me anymore! Have an idea of how you would like to approach your treatment when you meet with me. How often would you like to meet? What are your major concerns?&rdquo;
             </p>
             <p className="text-right text-sm font-medium text-primary mt-2">- Ambreen Rashid Khan</p>
           </div>
