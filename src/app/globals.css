@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+  --teal-primary: #4FD1C7;
+  --teal-light: #E6FFFA;
+  --teal-dark: #2C7A7B;
+  --text-dark: #1A202C;
+  --text-gray: #4A5568;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+}
