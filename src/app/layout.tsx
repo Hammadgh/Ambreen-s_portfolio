@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "Ambreen Rashid Khan - Clinical Psychologist | Mental Wellness Expert",
   description: "Empowering change for a happy, authentic life. Clinical psychologist offering individual, couples, and group therapy in Lahore, Pakistan.",
 };
+export const metadata = {
+  verification: {
+    google: "wA83WgRPghu40_a8j-KC6lIDv29FIIi8EPWHEjHC4-M",
+  },
+};
 
 export default function RootLayout({
   children,
