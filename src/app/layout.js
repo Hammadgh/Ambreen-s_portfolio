@@ -13,6 +13,9 @@ const inter = Inter({
 });
 
 export const metadata = {
+  verification: {
+    google: "wA83WgRPghu40_a8j-KC6lIDv29FIIi8EPWHEjHC4-M",
+  },
   title: "Ambreen Rashid Khan - Clinical Psychologist",
   description: "Professional psychology services - helping you rediscover balance, clarity, and self-compassion",
 };
